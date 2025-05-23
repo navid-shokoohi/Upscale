@@ -15,7 +15,13 @@ upscaled_cube1 = np.zeros((h * scale, w * scale, bands), dtype=downscaled_cube.d
 
 # Nearest-neighbor-like replication (using INTER_NEAREST)
 for b in range(bands):
-    upscaled_cube1[:, :, b] = cv2.resize(downscaled_cube[:, :, b], (w * scale, h * scale), interpolation=cv2.INTER_NEAREST)
+    upscaled_cube1[:, :, b] = cv2.resize(
+        downscaled_cube[:, :, b],
+        (w * scale, h * scale),
+        interpolation=cv2.INTER_NEAREST
+    )
 
+# Save the result
 savemat('ARAD_1K_0912_upscaled_method1.mat', {'upscaled_cube1': upscaled_cube1})
 print("Upscaled using method 1 (replication).")
+
