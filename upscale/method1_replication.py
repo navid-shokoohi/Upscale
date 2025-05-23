@@ -4,7 +4,7 @@ import cv2
 from scipy.io import loadmat, savemat
 
 # Load downscaled cube
-mat_data = loadmat('ARAD_1K_0912_downscaled_py.mat')
+mat_data = loadmat('sample_downscale.mat')
 downscaled_cube = mat_data['downscaled_cube']
 
 scale = 2  # Reciprocal of 0.5 (used for downscaling)
@@ -22,6 +22,7 @@ for b in range(bands):
     )
 
 # Save the result
-savemat('ARAD_1K_0912_upscaled_method1.mat', {'upscaled_cube1': upscaled_cube1})
+savemat('sample_upscaled_method1.mat', {'upscaled_cube1': upscaled_cube1})
+print(f"Upcaled: {upscaled_cube1.shape}")
 print("Upscaled using method 1 (replication).")
 
