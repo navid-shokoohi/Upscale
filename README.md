@@ -8,7 +8,7 @@ This repository provides simple Python and MATLAB methods for preprocessing spec
 
 ### 🔧 Main Script (Python CLI)
 
-- `main.py`:  
+- `start.py`:  
   Command-line interface for processing `.mat` spectral cubes.  
   Offers:
   - Downscaling (bicubic)
